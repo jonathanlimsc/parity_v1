@@ -1,1 +1,89 @@
-body { padding-top:30px; }
+@font-face {
+    font-family: 'Bariol'; /*a name to be used later*/
+    src: url('/fonts/bariol_regular-webfont.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Ailerons'; /*a name to be used later*/
+    src: url('/fonts/Ailerons-Typeface.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Debby'; /*a name to be used later*/
+    src: url('/fonts/Debby.ttf'); /*URL to font*/
+}
+
+
+body { padding-top:0px; }
+
+/*Tools*/
+.margin-bottom-0 {
+    margin-bottom: 0px !important;
+}
+
+.margin-side-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.padding-side-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.page-content-container {
+    width: 100%;
+}
+
+.border-radius-0 {
+    border-radius: 0px !important;
+}
+/*Components*/
+.navigation-bar {
+    position: fixed;
+    width: 100%;
+    border-bottom-width: 0px;
+    background-color: transparent;
+    color: white;
+    z-index: 1;
+}
+.home-banner {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.signup-container {
+    color: white;
+    width: 50%;
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    z-index: 1;
+}
+
+.signup-button {
+    position: absolute;
+    margin-top: 30px;
+}
+
+.button-white-margin {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 15px 30px;
+}
+
+.button-white-margin:hover {
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+}
+
+.signup-container .signup-text {
+    opacity: 0.8;
+    font-family: 'Debby';
+    font-size: 60px;
+}
