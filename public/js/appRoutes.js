@@ -13,9 +13,19 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'AboutController'
 		})
 
-		.when('/geeks', {
-			templateUrl: 'views/geek.html',
-			controller: 'GeekController'	
+		.when('/howitworks', {
+				templateUrl: 'views/howitworks.html',
+				controller: 'HowItWorksController'
+		})
+
+		.when('/browse', {
+			templateUrl: 'views/browse.html',
+			controller: 'BrowseController'
+		})
+
+		.when('/contact', {
+			templateUrl: 'views/contact.html',
+			controller: 'ContactController'
 		});
 
 	$locationProvider.html5Mode(true);
