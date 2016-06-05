@@ -58,32 +58,35 @@ body { padding-top:0px; }
     width: 50%;
     position: absolute;
     top: 35%;
-    left: 6%;
+    left: 50%;
     z-index: 1;
-}
-
-.signup-button {
-    position: absolute;
-    margin-top: 30px;
-}
-
-.button-white-margin {
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    padding: 15px 30px;
-}
-
-.button-white-margin:hover {
-    border: 1px solid white;
-    background-color: rgba(0,0,0,0.3);
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
 }
 
 .signup-container .signup-text {
     opacity: 0.8;
     font-family: 'Debby';
     font-size: 60px;
+    text-align: center;
 }
+
+.signup-button {
+position: absolute;
+margin-top: 25px;
+left: 40%;
+}
+
+.button-white-margin {
+border: 1px solid white;
+background-color: transparent;
+color: white;
+padding: 15px 30px;
+}
+
+.button-white-margin:hover {
+border: 1px solid white;
+background-color: rgba(0,0,0,0.3);
+color: white;
+text-decoration: none;
+padding: 15px 30px;
+}
+
