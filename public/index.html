@@ -4,15 +4,18 @@
 	<meta charset="UTF-8">
 	<base href="/">
 
-	<title>Starter Node and Angular</title>
+	<title>Parity - One-stop marketplace for photographers, talents and customers.</title>
 
 	<!-- CSS -->
+	<link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
 	<!-- JS -->
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/jquery/dist/jquery.js"></script>
 
 	<!-- ANGULAR CONTROLLERS -->
 	<script src="js/controllers/MainCtrl.js"></script>
@@ -28,25 +31,64 @@
 	<script src="js/app.js"></script>
 </head>
 <body ng-app="sampleApp" ng-controller="MainController">
-<div class="container">
-	
-	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Parity</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/about">About Us</a></li>
-			<li><a href="/howitworks">How It Works</a></li>
-			<li><a href="/contact">Contact Us</a></li>
-			<li><a href="/browse">Browse</a></li>
-			<li><a href="/signup">Sign Up</a></li>
-		</ul>
-	</nav>
+<div class="wrapper" ng-class="{'page-blur': isLoginModalVisible}">
+<div class="container-fluid padding-side-0">
+	<div class="row margin-side-0">
+		<!-- HEADER -->
+		<nav class="navigation-bar navbar navbar-inverse margin-bottom-0 border-radius-0">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Parity</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="/about">About Us</a></li>
+				<li><a href="/howitworks">How It Works</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/browse">Browse</a></li>
+				<li><a href="/signup" ng-hide="isLoggedIn">Sign Up</a></li>
+				<li><a href ng-click="toggleLoginModal()" ng-hide="isLoggedIn">Log In</a></li>
+				<li><a href ng-show="isLoggedIn">{{username}}</a></li>
+			</ul>
+		</nav>
+	</div>
 
 	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
-
+	<div class="page-content-container" ng-view></div>
+	</div>
 </div>
+	<!-- Button HTML (to Trigger Modal) -->
+	<div class="login-modal centered-modal" ng-show="isLoginModalVisible">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div ng-click="toggleLoginModal()" class="close-modal-button"><span class="glyphicon glyphicon-remove"></span></div>
+				</div>
+				<div class="login-form-container centered-modal col-lg-12">
+					<form name="loginForm" novalidate>
+						<div class="username-field input-group padding-bottom-30">
+							<span class="input-group-addon" id="user-icon"><span class="glyphicon glyphicon-user"></span></span>
+							<input id="login-username-field" name="username" ng-model="usernameString" type="text" class="form-control" ng-class="{'has-error': isUsernameInvalid}" placeholder="Username" aria-describedby="basic-addon1">
+						</div>
+						<p class="margin-top-minus-30 error-text" ng-show="usernameErrorMessage">{{ usernameErrorMessage }}</p>
+						<div class="password-field input-group padding-bottom-30">
+							<span class="input-group-addon" id="lock-icon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input id="login-password-field" name="password" ng-model="passwordString" type="password" class="form-control" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}" placeholder="Password" aria-describedby="basic-addon1">
+						</div>
+						<p ng-show="passwordErrorMessage" class="margin-top-minus-30 error-text">{{ passwordErrorMessage }}</p>
+						<p ng-show="errorMessage" class="margin-top-minus-30 error-text">{{errorMessage}}</p>
+						<div type="submit" ng-click="validateLogin()" class="button-red-margin text-align-center margin-bottom-30">
+							Login
+						</div>
+					</form>
+					<hr class="modal-hr" width="100%"/>
+					<h5 class="text-align-center padding-bottom-10">Don't have an account yet?</h5>
+					<div class="button-blue-margin text-align-center" ng-click="navigateTo('signup')">
+						Sign Up
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 </body>
 </html>
