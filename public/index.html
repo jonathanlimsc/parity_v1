@@ -35,7 +35,7 @@
 <div class="container-fluid padding-side-0">
 	<div class="row margin-side-0">
 		<!-- HEADER -->
-		<nav class="navigation-bar navbar navbar-inverse margin-bottom-0 border-radius-0">
+		<nav class="navbar navbar-inverse margin-0 border-radius-0" ng-class="{'navigation-bar-transparent': pagePath() === '/', 'navigation-bar-black': pagePath() !== '/'}">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">Parity</a>
 			</div>
@@ -55,7 +55,7 @@
 	<div class="page-content-container" ng-view></div>
 	</div>
 </div>
-	<!-- Button HTML (to Trigger Modal) -->
+	<!--Login Modal-->
 	<div class="login-modal centered-modal" ng-show="isLoginModalVisible">
 		<div class="container-fluid">
 			<div class="row">
