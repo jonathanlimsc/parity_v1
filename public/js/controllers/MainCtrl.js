@@ -15,7 +15,7 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope','$location
 		$scope.errorMessage = "";
 
 		validUsernames = ["jonathanlimsc", "ericliu", "vpoornima", "karthik"];
-		validPasswords = ["nvcrocks"];
+		validPasswords = ["nvcrocks", "password", "123"];
 		username = $scope.usernameString;
 		password = $scope.passwordString;
 		if(!username){
@@ -31,7 +31,8 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope','$location
 				console.log("Login successful!");
 				$scope.isLoggedIn = true;
 				$scope.username = username;
-				//$location.path('/');
+				$location.path('/');
+				$scope.toggleLoginModal();
 
 			} else {
 				$scope.errorMessage = "Username or password is invalid."
@@ -42,11 +43,25 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope','$location
 	$scope.navigateTo = function(target){
 		switch (target) {
 			case 'signup':
-				//$location.path('/signup');
-				window.location.href = '/signup';
+				$location.path('/signup');
+				//window.location.href = '/signup';
 				break;
 			default :
 				window.location.href = '/';
+		}
+	};
+
+	// Checks the page path to apply the right class for the navbar
+	$scope.pagePath = function(){
+		var pathArray = $location.path().split('/');
+		if(pathArray.length <= 1){
+			return '/';
+		}
+		else if(pathArray.length > 1) {
+			if(pathArray[1] === '')
+				return '/';
+			else
+				return pathArray[1];
 		}
 	};
 
