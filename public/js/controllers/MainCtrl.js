@@ -15,7 +15,7 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope','$location
 		$scope.errorMessage = "";
 
 		validUsernames = ["jonathanlimsc", "ericliu", "vpoornima", "karthik"];
-		validPasswords = ["nvcrocks"];
+		validPasswords = ["nvcrocks", "password", "123"];
 		username = $scope.usernameString;
 		password = $scope.passwordString;
 		if(!username){
@@ -31,7 +31,8 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope','$location
 				console.log("Login successful!");
 				$scope.isLoggedIn = true;
 				$scope.username = username;
-				//$location.path('/');
+				$location.path('/');
+				$scope.toggleLoginModal();
 
 			} else {
 				$scope.errorMessage = "Username or password is invalid."
