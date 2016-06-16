@@ -46,6 +46,14 @@ body { padding-top:0px; }
     padding-right: 0px !important;
 }
 
+.padding-left-15 {
+    padding-left: 15px;
+}
+
+.padding-right-15 {
+    padding-right: 15px;
+}
+
 .padding-bottom-10 {
     padding-bottom: 10px;
 }
@@ -75,6 +83,10 @@ body { padding-top:0px; }
     background: grey;
 }
 
+.height-100-px {
+    height: 100px;
+}
+
 .height-500-px {
     height: 100%;
 }
@@ -82,6 +94,31 @@ body { padding-top:0px; }
 .width-80-px {
     width: 80px;
 }
+
+.width-100-pc {
+    width: 100%;
+}
+
+.flexy {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 2;
+}
+
+.space-b {
+    justify-content: space-between;
+}
+
 /*Components*/
 
 .page-content-container {
@@ -229,6 +266,15 @@ body { padding-top:0px; }
 
 .right-gallery {
     height: 100%;
+    margin-top: 20px;
+}
+
+.browse-profile {
+    height: 350px;
+}
+
+.browse-profile-table {
+    height: 100px;
 }
 
 .date-picker {
@@ -236,3 +282,24 @@ body { padding-top:0px; }
     float: left;
     z-index: 2;
 }
+
+.browse-profile-pic {
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.browse-profile-content {
+    width: 200px;
+}
+
+.dollar-tag {
+    padding-top: 12px;
+    font-size: 15px;
+}
+
+.browse-location-dropdown {
+}
+

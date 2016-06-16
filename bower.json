@@ -5,6 +5,7 @@
     "bootstrap": "latest",
     "angular": "latest",
     "angular-route": "latest",
-    "animate.css": "animate-css#^3.5.1"
+    "animate.css": "animate-css#^3.5.1",
+    "angularjs-slider": "^4.0.2"
   }
 }

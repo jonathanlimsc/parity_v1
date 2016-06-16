@@ -1,4 +1,4 @@
-angular.module('BrowseCtrl', ['ui.bootstrap']).controller('BrowseController', function($scope) {
+angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseController', function($scope) {
 
     $scope.tagline = 'Browse profiles here!';
 
@@ -95,4 +95,42 @@ angular.module('BrowseCtrl', ['ui.bootstrap']).controller('BrowseController', fu
 
         return '';
     }
+
+    $scope.profiles = [];
+
+    $scope.priceSlider = 150;
+
+    function loadProfiles(){
+        var eric = {
+            name: "Eric Liu",
+            image: "../img/package-thumbnail-1.jpg",
+            profilePic: "../img/profile-pic-1.jpg",
+            minPrice: 220,
+            maxPrice: 550,
+            rating: 4,
+            reviews: 86,
+            location: "Clementi, Singapore",
+            area: "West"
+        };
+        var eric2 = {
+            name: "Eric Liu",
+            image: "../img/package-thumbnail-1.jpg",
+            profilePic: "../img/profile-pic-1.jpg",
+            minPrice: 220,
+            maxPrice: 550,
+            rating: 4,
+            reviews: 86,
+            location: "Clementi, Singapore",
+            area: "West"
+        };
+
+        $scope.profiles.push(eric);
+        $scope.profiles.push(eric2);
+    }
+
+    $scope.iterator = function(number){
+        return new Array(number);
+    };
+
+    loadProfiles();
 });

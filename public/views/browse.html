@@ -22,24 +22,77 @@
                 </span>
             </p>
             <p class="input-group">
-                <input type="text" class="form-control" />
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default width-80-px text-align-left" ng-click="locationDropdown()">Location</button>
-                </span>
+                <!--<input type="text" class="form-control" />-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-default width-80-px text-align-left" ng-click="locationDropdown()">Location</button>&ndash;&gt;-->
+                <!--<span class="input-group-btn dropdown browse-location-dropdown">-->
+                    <!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                        <!--Location-->
+                        <!--<span class="caret"></span>-->
+                    <!--</button>-->
+                    <!--<ul class="dropdown-menu width-100-pc" aria-labelledby="dropdownMenu2">-->
+                        <!--<li class="text-align-center"><a href="#">North</a></li>-->
+                        <!--<li class="text-align-center"><a href="#">South</a></li>-->
+                        <!--<li class="text-align-center"><a href="#">East</a></li>-->
+                        <!--&lt;!&ndash;<li role="separator" class="divider"></li>&ndash;&gt;-->
+                        <!--<li class="text-align-center"><a href="#">West</a></li>-->
+                    <!--</ul>-->
+                <!--</span>-->
+            <div class="filter-location">
+                <div class="input-group">
+                    <input type="text" class="form-control" aria-label="...">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="text-align-center"><a href="#">North</a></li>
+                            <li class="text-align-center"><a href="#">South</a></li>
+                            <li class="text-align-center"><a href="#">East</a></li>
+                            <!--<li role="separator" class="divider"></li>-->
+                            <li class="text-align-center"><a href="#">West</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
             </p>
+
+            <div>
+                <rzslider rz-slider-model="priceSlider"></rzslider>
+            </div>
+            <!--<p class="input-group">-->
+
+            <!--</p>-->
 
 
         </div>
         <div class="col-lg-9 col-lg-offset-3 right-gallery">
             <div class="row">
-                <div class="col-lg-4 background-grey">
-                    hello
+                <div ng-repeat="profile in profiles" class="col-md-4 padding-bottom-30 browse-profile">
+                    <img src="{{profile.image}}" class="img-responsive" style="max-height: 533px; overflow: hidden">
+                    <div class="table-bordered browse-profile-table">
+                        <div class="flexy row padding-right-15 padding-left-15 height-100-px">
+                            <img id="profilePic" src="{{profile.profilePic}}" class="browse-profile-pic">
+                            <div class="padding-left-15 browse-profile-content">
+                               <div class="flexy row space-b"><p style="padding-top: 8px; color: grey; font-size: 20px">{{profile.name}}</p><span class="dollar-tag">${{profile.minPrice}}-${{profile.maxPrice}}</span></div>
+                                <p style="padding-left: 10px; color: darkorange;"><span ng-repeat="idx in iterator(profile.rating) track by $index" class="glyphicon glyphicon-star" aria-hidden="true"></span><span style="padding-left: 36px; color: darkorange;">{{profile.reviews}} reviews</span></p>
+                                <p style="padding-left: 10px; color: grey">Clementi, Singapore</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    hello
+                <div class="col-md-4 padding-bottom-30 browse-profile">
+                    <img src="../img/package-thumbnail-2.jpg" class="img-responsive" style="max-height: 533px; overflow: hidden">
+                    <div class="table-bordered browse-profile-table">
+                        <p style="padding-left: 8px; padding-top: 8px; color: grey; font-size: medium"><span style="color: darkgrey;">[Outdoor]</span> Fashion shoot</p>
+                        <p style="padding-left: 8px; color: darkorange;">Negotiate</p>
+                        <p style="padding-left: 8px; color: grey">Location of the client's choice</p>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    hello
+                <div class="col-md-4 padding-bottom-30 browse-profile">
+                    <img src="../img/package-thumbnail-3.jpg" class="img-responsive" style="max-height: 533px; overflow: hidden">
+                    <div class="table-bordered browse-profile-table" >
+                        <p style="padding-left: 8px; padding-top: 8px; color: grey; font-size: medium"><span style="color: darkgrey;">[Indoor]</span> 2-hour children event coverage</p>
+                        <p style="padding-left: 8px; color: darkorange;">350-500 SGD</p>
+                        <!--<p style="padding-left: 8px; color: grey">Location of the client's choice (Singapore only)</p>-->
+                    </div>
                 </div>
             </div>
         </div>
