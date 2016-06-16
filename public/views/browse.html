@@ -10,15 +10,15 @@
             <h4 class="text-center">Filters</h4>
             <hr/>
             <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="fromDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <input placeholder="Start Date" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="fromDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default width-80-px text-align-left" ng-click="fromDatePopup()"><i class="glyphicon glyphicon-calendar"></i> From</button>
+                    <button type="button" class="btn btn-default width-80-px text-align-left" ng-click="fromDatePopup()"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
             </p>
             <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="toDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <input placeholder="End Date" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="toDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default width-80-px text-align-left" ng-click="toDatePopup()"><i class="glyphicon glyphicon-calendar"></i> To</button>
+                    <button type="button" class="btn btn-default width-80-px text-align-left" ng-click="toDatePopup()"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
             </p>
             <p class="input-group">
@@ -39,28 +39,25 @@
                 <!--</span>-->
             <div class="filter-location">
                 <div class="input-group">
-                    <input type="text" class="form-control" aria-label="...">
+                    <input ng-model="locationFilter" type="text" class="form-control" aria-label="..." placeholder="Who's the best?">
                     <div class="input-group-btn">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li class="text-align-center"><a href="#">North</a></li>
-                            <li class="text-align-center"><a href="#">South</a></li>
-                            <li class="text-align-center"><a href="#">East</a></li>
+                            <li class="text-align-center"><a href="#" ng-click="setLocation('North')">North</a></li>
+                            <li class="text-align-center"><a href="#" ng-click="setLocation('South')">South</a></li>
+                            <li class="text-align-center"><a href="#" ng-click="setLocation('East')">East</a></li>
                             <!--<li role="separator" class="divider"></li>-->
-                            <li class="text-align-center"><a href="#">West</a></li>
+                            <li class="text-align-center"><a href="#" ng-click="setLocation('West')">West</a></li>
                         </ul>
                     </div><!-- /btn-group -->
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
             </p>
 
+            <!-- Slider -->
             <div>
-                <rzslider rz-slider-model="priceSlider"></rzslider>
+                <rzslider rz-slider-model="slider.lowValue" rz-slider-high="slider.highValue" rz-slider-options="slider.options"></rzslider>
             </div>
-            <!--<p class="input-group">-->
-
-            <!--</p>-->
-
 
         </div>
         <div class="col-lg-9 col-lg-offset-3 right-gallery">

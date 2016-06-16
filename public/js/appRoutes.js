@@ -33,7 +33,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'SignUpController'
 		})
 
-		.when('/profile',{
+		.when('/profile/eric_liu',{
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController'
 		})
