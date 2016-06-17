@@ -42,6 +42,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/jasonchu.html',
 			controller: 'ProfileController'
 		})
+
+		.when('/messages', {
+			templateUrl: 'views/messages.html',
+			controller: 'MessagesController'
+		})
 	;
 
 	$locationProvider.html5Mode(true);
