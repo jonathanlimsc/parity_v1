@@ -42,6 +42,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/jasonchu.html',
 			controller: 'ProfileController'
 		})
+
+		.when('/package/ericliu-fun-shoot',{
+			templateUrl: 'views/package-fun-shoot.html',
+			controller: 'PackageController'
+		})
 	;
 
 	$locationProvider.html5Mode(true);
