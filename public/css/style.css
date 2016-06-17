@@ -20,6 +20,11 @@ body { padding-top:0px; }
 .margin-0 {
     margin: 0px !important;
 }
+
+.border-0 {
+    border: 0px !important;
+}
+
 .margin-bottom-0 {
     margin-bottom: 0px !important;
 }
@@ -41,14 +46,29 @@ body { padding-top:0px; }
     padding-right: 0px !important;
 }
 
+.padding-left-15 {
+    padding-left: 15px;
+}
+
+.padding-right-15 {
+    padding-right: 15px;
+}
+
+.padding-top-15 {
+    padding-top: 15px;
+}
+
 .padding-bottom-10 {
     padding-bottom: 10px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
 }
 
 .padding-bottom-30 {
     padding-bottom: 30px;
 }
-
 
 .border-radius-0 {
     border-radius: 0px !important;
@@ -58,9 +78,66 @@ body { padding-top:0px; }
     text-align: center;
 }
 
+.text-align-left {
+    text-align: left;
+}
+
 .disable-link-default {
     text-decoration: inherit;
     color: inherit;
+}
+
+.background-grey {
+    background: grey;
+}
+
+.height-100-px {
+    height: 100px;
+}
+
+.height-500-px {
+    height: 100%;
+}
+
+.width-80-px {
+    width: 80px;
+}
+
+.width-50-px {
+    width: 50px;
+}
+
+.width-100-pc {
+    width: 100%;
+}
+
+.flexy {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+
+.col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 2;
+}
+
+.space-b {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.font-size-16 {
+    font-size: 16px;
 }
 
 /*Components*/
@@ -72,7 +149,7 @@ body { padding-top:0px; }
 .navigation-bar-transparent {
     position: fixed;
     width: 100%;
-    border-bottom-width: 0px;
+    border: 0px;
     background-color: transparent;
     color: white;
     z-index: 1;
@@ -81,7 +158,7 @@ body { padding-top:0px; }
 .navigation-bar-black {
     position: relative;
     width: 100%;
-    border-bottom-width: 0px;
+    border: 0px;
     background-color: black;
     color: white;
     z-index: 0;
@@ -110,24 +187,24 @@ body { padding-top:0px; }
 }
 
 .signup-button {
-position: absolute;
-margin-top: 25px;
-left: 40%;
+    position: absolute;
+    margin-top: 25px;
+    left: 40%;
 }
 
 .button-white-margin {
-border: 1px solid white;
-background-color: transparent;
-color: white;
-padding: 15px 30px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 15px 30px;
 }
 
 .button-white-margin:hover {
-border: 1px solid white;
-background-color: rgba(0,0,0,0.3);
-color: white;
-text-decoration: none;
-padding: 15px 30px;
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
 }
 
 .button-red-margin:hover {
@@ -195,4 +272,75 @@ padding: 15px 30px;
 .error-text{
     color: #AA3939;
 }
+
+.left-sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    height: 100%;
+    z-index: 0;
+    display: block;
+}
+
+.right-gallery {
+    height: 100%;
+    margin-top: 20px;
+}
+
+.browse-profile {
+    height: 350px;
+}
+
+.browse-profile:hover {
+    opacity: 0.65;
+}
+
+.browse-profile-table {
+    height: 140px;
+}
+
+.date-picker {
+    display: block;
+    float: left;
+    z-index: 2;
+}
+
+.browse-profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.browse-profile-content {
+    width: 317px;
+}
+
+.dollar-tag {
+    padding-top: 12px;
+    font-size: 15px;
+}
+
+.browse-profile-para {
+    margin-bottom: 5px;
+
+}
+
+.browse-profile-title {
+    padding-top: 8px;
+    position: relative;
+    color: grey;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.browse-profile-title-container {
+    width: 290px;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
 
