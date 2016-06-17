@@ -54,8 +54,16 @@ body { padding-top:0px; }
     padding-right: 15px;
 }
 
+.padding-top-15 {
+    padding-top: 15px;
+}
+
 .padding-bottom-10 {
     padding-bottom: 10px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
 }
 
 .padding-bottom-30 {
@@ -95,6 +103,10 @@ body { padding-top:0px; }
     width: 80px;
 }
 
+.width-50-px {
+    width: 50px;
+}
+
 .width-100-pc {
     width: 100%;
 }
@@ -103,9 +115,10 @@ body { padding-top:0px; }
     display: flex;
 }
 
-.row {
+.flex-row {
     flex-direction: row;
 }
+
 
 .col {
     flex-direction: column;
@@ -117,6 +130,10 @@ body { padding-top:0px; }
 
 .space-b {
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 /*Components*/
@@ -259,9 +276,6 @@ body { padding-top:0px; }
     height: 100%;
     z-index: 0;
     display: block;
-    border-right: 1px;
-    border-right-color: black;
-    border-right-style: solid;
 }
 
 .right-gallery {
@@ -274,7 +288,7 @@ body { padding-top:0px; }
 }
 
 .browse-profile-table {
-    height: 100px;
+    height: 140px;
 }
 
 .date-picker {
@@ -284,15 +298,13 @@ body { padding-top:0px; }
 }
 
 .browse-profile-pic {
-    width: 75px;
-    height: 75px;
-    margin-top: 10px;
-    margin-left: 10px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
 .browse-profile-content {
-    width: 200px;
+    width: 317px;
 }
 
 .dollar-tag {
@@ -300,6 +312,27 @@ body { padding-top:0px; }
     font-size: 15px;
 }
 
-.browse-location-dropdown {
+.browse-profile-para {
+    margin-bottom: 5px;
+
 }
+
+.browse-profile-title {
+    padding-top: 8px;
+    position: relative;
+    color: grey;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.browse-profile-title-container {
+    width: 290px;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
 

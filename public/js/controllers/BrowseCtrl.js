@@ -102,44 +102,102 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
 
     $scope.profiles = [];
 
-    function loadProfiles(){
-        var eric = {
-            name: "Eric Liu",
+    function getAllProfiles(){
+        var profiles = [];
+        var eric1 = {
+            packageName: "Natural Light Shoot",
+            type: "Casual",
+            photographer: "Eric Liu",
             image: "../img/package-thumbnail-1.jpg",
             profilePic: "../img/profile-pic-1.jpg",
-            minPrice: 220,
-            maxPrice: 550,
+            minPrice: 200,
+            maxPrice: 420,
             rating: 4,
-            reviews: 86,
-            location: "Clementi, Singapore",
-            area: "West"
+            reviews: 5,
+            location: "Marina Bay Sands",
+            area: "Central"
         };
+
         var eric2 = {
-            name: "Eric Liu",
-            image: "../img/package-thumbnail-1.jpg",
+            packageName: "Fashion Shoot",
+            type: "Fashion",
+            photographer: "Eric Liu",
+            image: "../img/package-thumbnail-2.jpg",
             profilePic: "../img/profile-pic-1.jpg",
-            minPrice: 220,
-            maxPrice: 550,
+            minPrice: 300,
+            maxPrice: 600,
             rating: 4,
-            reviews: 86,
-            location: "Clementi, Singapore",
+            reviews: 5,
+            location: "Clementi",
             area: "West"
         };
 
-        $scope.profiles.push(eric);
-        $scope.profiles.push(eric2);
+        var eric3 = {
+            packageName: "Children Event Coverage",
+            type: "Event",
+            photographer: "Eric Liu",
+            image: "../img/package-thumbnail-3.jpg",
+            profilePic: "../img/profile-pic-1.jpg",
+            minPrice: 350,
+            maxPrice: 500,
+            rating: 4,
+            reviews: 5,
+            location: "Punggol",
+            area: "North"
+        };
+
+        var eric4 = {
+            packageName: "Fun Shoot",
+            type: "Casual",
+            photographer: "Eric Liu",
+            image: "../img/package-thumbnail-4.jpg",
+            profilePic: "../img/profile-pic-1.jpg",
+            minPrice: 200,
+            maxPrice: 420,
+            rating: 4,
+            reviews: 5,
+            location: "Clementi",
+            area: "West"
+        };
+
+        var eric5 = {
+            packageName: "1930 Chinese School Girl",
+            type: "Casual",
+            photographer: "Eric Liu",
+            image: "../img/package-thumbnail-5.jpg",
+            profilePic: "../img/profile-pic-1.jpg",
+            minPrice: 250,
+            maxPrice: 450,
+            rating: 4,
+            reviews: 5,
+            location: "Chinatown",
+            area: "Central"
+        };
+
+        profiles.push(eric1);
+        profiles.push(eric2);
+        profiles.push(eric3);
+        profiles.push(eric4);
+        profiles.push(eric5);
+
+        return profiles;
     }
+
+    function loadAllProfiles(){
+        $scope.profiles = getAllProfiles();
+    }
+
+    loadAllProfiles();
 
     $scope.iterator = function(number){
         return new Array(number);
     };
 
-    loadProfiles();
 
     // Slider stuff
 
     $scope.slider = {
-        lowValue: 150,
+        lowValue: 0,
         highValue: 1000,
         options : {
             step: 10,
@@ -148,16 +206,44 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             hideLimitLabels: true,
             translate: function(val){
                 return '$' + val;
+            },
+            onChange: function(id, modelValue, highValue, pointerType){
+                $scope.filterProfiles();
             }
         }
     };
 
     // Filter stuff
-    $scope.locationFilter;
+    $scope.locationFilter = 'Any';
 
     // Location filter
     $scope.setLocation = function(location){
         $scope.locationFilter = location;
+        $scope.filterProfiles();
+    };
+
+    $scope.filterProfiles = function(){
+        console.log("change");
+        // Filter variables
+        var lowPrice = $scope.slider.lowValue;
+        var highPrice = $scope.slider.highValue;
+        var location = $scope.locationFilter;
+
+        var profiles = getAllProfiles();
+
+        var processedProfiles = _.filter(profiles, function(profile){
+            if(lowPrice <= profile.minPrice) {
+                if(highPrice >= profile.maxPrice){
+                    if(location === 'Any' || location === profile.area){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        });
+
+        $scope.profiles = processedProfiles;
+
     };
 });
 
