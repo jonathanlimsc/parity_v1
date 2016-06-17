@@ -31,7 +31,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/signup', {
 			templateUrl: 'views/signup.html',
 			controller: 'SignUpController'
-		});
+		})
+
+		.when('/profile',{
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController'
+		})
+	;
 
 	$locationProvider.html5Mode(true);
 
