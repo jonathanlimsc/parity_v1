@@ -47,7 +47,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController'
 		})
-	;
+
+		.when('/package/ericliu-fun-shoot',{
+			templateUrl: 'views/package-fun-shoot.html',
+			controller: 'PackageController'
+		});
 
 	$locationProvider.html5Mode(true);
 
