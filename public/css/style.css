@@ -291,6 +291,10 @@ body { padding-top:0px; }
     height: 350px;
 }
 
+.browse-profile:hover {
+    opacity: 0.65;
+}
+
 .browse-profile-table {
     height: 140px;
 }
