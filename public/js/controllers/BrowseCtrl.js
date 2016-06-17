@@ -157,7 +157,8 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             rating: 4,
             reviews: 5,
             location: "Clementi",
-            area: "West"
+            area: "West",
+            link: "http://localhost:8080/package/ericliu-fun-shoot"
         };
 
         var eric5 = {

@@ -82,6 +82,7 @@
         <div class="col-lg-9 col-lg-offset-3 right-gallery">
             <div class="row">
                 <div ng-repeat="profile in profiles" class="col-md-4 padding-bottom-30 browse-profile">
+                    <a ng-href="{{profile.link}}">
                     <img src="{{profile.image}}" class="img-responsive" style="max-height: 533px; overflow: hidden">
                     <div class="table-bordered browse-profile-table">
                         <div class="flexy row padding-right-15 padding-left-15 height-100-px">
@@ -102,6 +103,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
