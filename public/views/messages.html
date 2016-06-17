@@ -1,0 +1,58 @@
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-md-4 bg-white ">
+            <div class=" row border-bottom padding-sm" style="height: 40px;">
+            </div>
+
+            <!-- =============================================================== -->
+            <!-- member list -->
+            <ul class="friend-list">
+                <li ng-repeat="contact in contacts" ng-class="{'active': contact.active}" class="bounceInDown">
+                    <a href="#" class="clearfix">
+                        <img src="{{contact.profilePic}}" alt="" class="img-circle">
+                        <div class="friend-name relative-right-15">
+                            <strong>{{contact.name}}</strong>
+                        </div>
+                        <div class="last-message text-muted padding-left-15">{{contact.text}}</div>
+                        <small class="time text-muted">{{contact.time}}</small>
+                        <small ng-if="contact.unread" class="chat-alert label label-danger">{{contact.unread}}</small>
+                        <!--<small ng-if="!contact.unread" class="pull-right text-muted"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></small>-->
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--=========================================================-->
+        <!-- selected chat -->
+        <div class="col-md-8 bg-white ">
+            <div class="chat-message">
+                <ul class="chat">
+                    <li ng-repeat="message in chatMessages" ng-class="{'left': message.role === 'receiver', 'right': message.role === 'sender' }" class="clearfix">
+                    	<span class="chat-img" ng-class="{'pull-left': message.role === 'receiver', 'pull-right': message.role === 'sender' }">
+                    		<img src="{{message.profilePic}}" alt="User Avatar">
+                    	</span>
+
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">{{message.name}}</strong>
+                                <small class="pull-right text-muted"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{message.time}}</small>
+                            </div>
+                            <p class="margin-top-10">
+                                {{message.text}}
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="chat-box bg-white">
+                <div class="input-group" ng-enter="submitMessage()">
+                        <input ng-model="textMessage" class="form-control border no-shadow no-rounded" placeholder="Type your message here">
+            		<span class="input-group-btn">
+            			<button ng-click="submitMessage()" class="btn btn-success no-rounded" type="submit">Send</button>
+            		</span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+    </div>
+</div>

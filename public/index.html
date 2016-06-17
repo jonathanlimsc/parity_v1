@@ -37,11 +37,13 @@
 	<script src="js/controllers/ContactCtrl.js"></script>
 	<script src="js/controllers/SignUpCtrl.js"></script>
 	<script src="js/controllers/ProfileCtrl.js"></script>
+	<script src="js/controllers/MessagesCtrl.js"></script>
 	<script src="js/controllers/PackageCtrl.js"></script>
 
 	<!-- We dont need these services for now -->
 	<script src="js/services/GeekService.js"></script>
 	<script src="js/services/NerdService.js"></script>
+
 	<script src="js/appRoutes.js"></script>
 	<script src="js/app.js"></script>
 </head>
@@ -55,11 +57,8 @@
 				<a class="navbar-brand" href="/">Parity</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="/about">About Us</a></li>
 				<li><a href="/howitworks">How It Works</a></li>
-				<li><a href="/contact">Contact Us</a></li>
 				<li><a href="/browse">Browse</a></li>
-				<li><a href="/signup" ng-hide="isLoggedIn">Sign Up</a></li>
 				<li><a href ng-click="toggleLoginModal()" ng-hide="isLoggedIn">Log In</a></li>
 				<li><a href ng-show="isLoggedIn">{{username}}</a></li>
 			</ul>

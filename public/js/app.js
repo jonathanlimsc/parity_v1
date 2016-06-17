@@ -1,3 +1,6 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'AboutCtrl', 'NerdService', 'HowItWorksCtrl', 'GeekService', 'ContactCtrl', 'BrowseCtrl', 'SignUpCtrl', 'ui.bootstrap', 'ProfileCtrl', 'rzModule', 'PackageCtrl']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'AboutCtrl', 'NerdService', 'HowItWorksCtrl', 'GeekService', 'ContactCtrl', 'BrowseCtrl', 'SignUpCtrl', 'MessagesCtrl', 'ProfileCtrl', 'PackageCtrl', 'ui.bootstrap', 'rzModule']);
+
+
+
 
 

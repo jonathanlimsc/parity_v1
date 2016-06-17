@@ -279,7 +279,5 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
 
         return packageTypes;
     }
-
-
 });
 
