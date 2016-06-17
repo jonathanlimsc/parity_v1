@@ -136,6 +136,10 @@ body { padding-top:0px; }
     justify-content: center;
 }
 
+.font-size-16 {
+    font-size: 16px;
+}
+
 /*Components*/
 
 .page-content-container {
@@ -285,6 +289,10 @@ body { padding-top:0px; }
 
 .browse-profile {
     height: 350px;
+}
+
+.browse-profile:hover {
+    opacity: 0.65;
 }
 
 .browse-profile-table {

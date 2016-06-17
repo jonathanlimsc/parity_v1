@@ -128,8 +128,8 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             maxPrice: 600,
             rating: 4,
             reviews: 5,
-            location: "Clementi",
-            area: "West"
+            location: "Location negotiable",
+            area: "Any"
         };
 
         var eric3 = {
@@ -216,6 +216,13 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
     // Filter stuff
     $scope.locationFilter = 'Any';
 
+    $scope.weddingFilter = true;
+    $scope.eventFilter = true;
+    $scope.casualFilter = true;
+    $scope.familyFilter = true;
+    $scope.fashionFilter = true;
+    $scope.graduationFilter = true;
+
     // Location filter
     $scope.setLocation = function(location){
         $scope.locationFilter = location;
@@ -228,14 +235,17 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
         var lowPrice = $scope.slider.lowValue;
         var highPrice = $scope.slider.highValue;
         var location = $scope.locationFilter;
+        var packageTypeFilters = getPackageTypeFilterArray();
 
         var profiles = getAllProfiles();
 
         var processedProfiles = _.filter(profiles, function(profile){
             if(lowPrice <= profile.minPrice) {
                 if(highPrice >= profile.maxPrice){
-                    if(location === 'Any' || location === profile.area){
-                        return true;
+                    if(location === 'Any' || location === profile.area || profile.area === 'Any'){
+                        if(_.includes(packageTypeFilters, profile.type)){
+                            return true;
+                        }
                     }
                 }
             }
@@ -245,5 +255,31 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
         $scope.profiles = processedProfiles;
 
     };
+
+    function getPackageTypeFilterArray(){
+        var packageTypes = [];
+        if($scope.weddingFilter){
+            packageTypes.push('Wedding');
+        }
+        if($scope.eventFilter){
+            packageTypes.push('Event');
+        }
+        if($scope.casualFilter){
+            packageTypes.push('Casual');
+        }
+        if($scope.familyFilter){
+            packageTypes.push('Family');
+        }
+        if($scope.fashionFilter){
+            packageTypes.push('Fashion');
+        }
+        if($scope.graduationFilter){
+            packageTypes.push('Graduation');
+        }
+
+        return packageTypes;
+    }
+
+
 });
 

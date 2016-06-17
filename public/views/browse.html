@@ -48,8 +48,37 @@
             </div>
 
             <!--Photography Type Filters-->
+            <div class="flexy flex-row justify-center">
+                <table>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Wedding</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="weddingFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Event</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="eventFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Casual</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="casualFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Family</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="familyFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Fashion</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="fashionFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                        <td><span class="padding-right-15 font-size-16">Graduation</span></td>
+                        <td><input ng-change="filterProfiles()" ng-model="graduationFilter" type="checkbox" aria-label="..."></td>
+                    </tr>
+                </table>
 
+            </div>
         </div>
+
         <div class="col-lg-9 col-lg-offset-3 right-gallery">
             <div class="row">
                 <div ng-repeat="profile in profiles" class="col-md-4 padding-bottom-30 browse-profile">
