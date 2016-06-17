@@ -115,7 +115,8 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             rating: 4,
             reviews: 5,
             location: "Marina Bay Sands",
-            area: "Central"
+            area: "Central",
+            link: "/profile/ericliu"
         };
 
         var eric2 = {
@@ -129,7 +130,8 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             rating: 4,
             reviews: 5,
             location: "Location negotiable",
-            area: "Any"
+            area: "Any",
+            link: "/profile/ericliu"
         };
 
         var eric3 = {
@@ -143,7 +145,8 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             rating: 4,
             reviews: 5,
             location: "Punggol",
-            area: "North"
+            area: "North",
+            link: "/profile/ericliu"
         };
 
         var eric4 = {
@@ -158,7 +161,7 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             reviews: 5,
             location: "Clementi",
             area: "West",
-            link: "http://localhost:8080/package/ericliu-fun-shoot"
+            link: "/package/ericliu-fun-shoot"
         };
 
         var eric5 = {
@@ -172,7 +175,68 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
             rating: 4,
             reviews: 5,
             location: "Chinatown",
-            area: "Central"
+            area: "Central",
+            link: "/profile/ericliu"
+        };
+
+        var jason1 = {
+            packageName: "Social Media Profile Pic",
+            type: "Casual",
+            photographer: "Jason Chu",
+            image: "../img/package-thumbnail-9.jpg",
+            profilePic: "../img/profile-pic-2.jpg",
+            minPrice: 50,
+            maxPrice: 120,
+            rating: 4,
+            reviews: 10,
+            location: "Location Negotiable",
+            area: "Any",
+            link: "/profile/jasonchu"
+        };
+
+        var jason2 = {
+            packageName: "2-hr Game Coverage",
+            type: "Event",
+            photographer: "Jason Chu",
+            image: "../img/package-thumbnail-10.jpg",
+            profilePic: "../img/profile-pic-2.jpg",
+            minPrice: 200,
+            maxPrice: 400,
+            rating: 4,
+            reviews: 10,
+            location: "Location Negotiable",
+            area: "Any",
+            link: "/profile/jasonchu"
+        };
+
+        var jason3 = {
+            packageName: "Business Event Coverage",
+            type: "Event",
+            photographer: "Jason Chu",
+            image: "../img/package-thumbnail-11.jpg",
+            profilePic: "../img/profile-pic-2.jpg",
+            minPrice: 0,
+            maxPrice: 3000,
+            rating: 4,
+            reviews: 10,
+            location: "Location Negotiable",
+            area: "Any",
+            link: "/profile/jasonchu"
+        };
+
+        var jason4 = {
+            packageName: "Family Photos",
+            type: "Family",
+            photographer: "Jason Chu",
+            image: "../img/package-thumbnail-12.jpg",
+            profilePic: "../img/profile-pic-2.jpg",
+            minPrice: 180,
+            maxPrice: 800,
+            rating: 4,
+            reviews: 10,
+            location: "Location Negotiable",
+            area: "Any",
+            link: "/profile/jasonchu"
         };
 
         profiles.push(eric1);
@@ -180,6 +244,11 @@ angular.module('BrowseCtrl', ['ui.bootstrap', 'rzModule']).controller('BrowseCon
         profiles.push(eric3);
         profiles.push(eric4);
         profiles.push(eric5);
+
+        profiles.push(jason1);
+        profiles.push(jason2);
+        profiles.push(jason3);
+        profiles.push(jason4);
 
         return profiles;
     }
